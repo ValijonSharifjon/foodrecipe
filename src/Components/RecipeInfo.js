@@ -11,7 +11,7 @@ const RecipeInfo = () => {
         .then(res=>res.json())
         .then(data=>{
             setItem(data.meals[0])
-        })
+        }).catch(err=>console.log(err))
     }
     // if(item){
     //     const url=item.strYoutube;
