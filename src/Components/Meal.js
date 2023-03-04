@@ -4,23 +4,23 @@ import RecipeIndex from './RecipeIndex'
 import { useState,useEffect } from 'react'
 
 const Meal = () => {
-  const [url,setUrl]=useState("https:/www.themealdb.com/api/json/v1/1/search.php?f=a");
+  const [test,setTest]=useState("https:/www.themealdb.com/api/json/v1/1/search.php?f=a");
   const [item,setItem]=useState();
   const [show,setShow]=useState(false);
   const [search,setSearch]=useState('')
   useEffect(()=>{
-    console.log(url)
-    fetch(url).then(res=>res.json()).then(data=>{
+    console.log(test)
+    fetch(test).then(res=>res.json()).then(data=>{
       setItem(data.meals);
       setShow(true)
     })
-  },[url])
+  },[test])
   const setIndex=(alpha)=>{
-    setUrl(`https:/www.themealdb.com/api/json/v1/1/search.php?f=${alpha}`)
+    setTest(`https:/www.themealdb.com/api/json/v1/1/search.php?f=${alpha}`)
   }
   const searchRecipe=(evt)=>{
     if(evt.key==='Enter'){
-      setUrl(`https:/www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
+      setTest(`https:/www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
     }
   }
   return (
