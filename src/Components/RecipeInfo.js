@@ -11,7 +11,6 @@ const RecipeInfo = () => {
         .then(res=>res.json())
         .then(data=>{
             setItem(data.meals[0])
-            console.log(data.meals[0])
         })
     }
     // if(item){
